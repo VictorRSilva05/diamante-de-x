@@ -5,7 +5,13 @@ namespace DiamanteDeX.ConsoleApp
     {
         static void Main(string[] args)
         {
-            Exibicao.MostrarMenu();
+            int tamanhoDiamante = Exibicao.MostrarMenu();
+
+            string[] linhas = Exibicao.CriarDiamante(tamanhoDiamante);
+
+            Exibicao.DesenharDiamante(linhas);
         }
+
+
     }
 }
