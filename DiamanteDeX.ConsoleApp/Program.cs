@@ -5,11 +5,25 @@ namespace DiamanteDeX.ConsoleApp
     {
         static void Main(string[] args)
         {
-            int tamanhoDiamante = Exibicao.MostrarMenu();
+            while (true)
+            {
+                int tamanhoDiamante = Exibicao.MostrarMenu();
 
-            List<string> linhas = Exibicao.CriarDiamante(tamanhoDiamante);
+                List<string> linhas = Exibicao.CriarDiamante(tamanhoDiamante);
 
-            Exibicao.DesenharDiamante(linhas);
+                Exibicao.DesenharDiamante(linhas);
+
+                Console.Write("Deseja desenhar outro diamante? (S/n)");
+                string opcao = Console.ReadLine().ToUpper();
+
+                while (opcao != "S" && opcao != "N")
+                {
+                    Console.Write("Valor inválido, tente novamente: ");
+                    opcao = Console.ReadLine();
+                }
+                if (opcao == "N")
+                    break;
+            }
         }
 
     }

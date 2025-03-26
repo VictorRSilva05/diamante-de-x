@@ -20,7 +20,7 @@ namespace DiamanteDeX.ConsoleApp
             string input = Console.ReadLine();
             int result;
 
-            while (!int.TryParse(input, out result) || result % 2 == 0)
+            while (!int.TryParse(input, out result) || result % 2 == 0 || result < 3)
             {
                 Console.Write("Valor inválido, tente novamente: ");
                 input = Console.ReadLine();
