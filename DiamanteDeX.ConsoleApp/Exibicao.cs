@@ -28,22 +28,30 @@ namespace DiamanteDeX.ConsoleApp
             return (int)result;
         }
 
-        public static string[] CriarDiamante(int tamanho)
+        public static List<string> CriarDiamante(int tamanho)
         {
-            string[] linhas = new string[tamanho];
+            List<string> linhas = new List<string>();
+            int espaco = default;
 
             for (int i = 1; i <= tamanho; i += 2)
             {
-                linhas[i - 1] = ("").PadRight(i, '*');
+                //linhas[i - 1] = ("").PadLeft(i, '*');
+                linhas.Add(("").PadLeft((tamanho + 10) - espaco, ' ') + ("").PadLeft(i, '*'));
+                espaco++;
             }
             return linhas;
         }
 
-        public static void DesenharDiamante(string[] linhas)
+        public static void DesenharDiamante(List<string> linhas)
         {
-            foreach (string line in linhas)
+            Console.Clear();
+            for (int i = 0; i < linhas.Count; i++)
             {
-                Console.WriteLine(line);
+                Console.WriteLine(linhas[i]);
+            }
+            for (int i = linhas.Count - 2; i >= 0; i--)
+            {
+                Console.WriteLine(linhas[i]);
             }
         }
     }

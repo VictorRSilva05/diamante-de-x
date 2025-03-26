@@ -7,11 +7,10 @@ namespace DiamanteDeX.ConsoleApp
         {
             int tamanhoDiamante = Exibicao.MostrarMenu();
 
-            string[] linhas = Exibicao.CriarDiamante(tamanhoDiamante);
+            List<string> linhas = Exibicao.CriarDiamante(tamanhoDiamante);
 
             Exibicao.DesenharDiamante(linhas);
         }
-
 
     }
 }
